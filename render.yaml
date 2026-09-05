@@ -1,0 +1,32 @@
+services:
+  - type: web
+    name: ai-contract-analyzer-api
+    runtime: docker
+    plan: free
+    autoDeploy: true
+    healthCheckPath: /api/v1/health
+    envVars:
+      - key: DATABASE_URL
+        fromDatabase:
+          name: ai-contract-analyzer-db
+          property: connectionString
+      - key: JWT_SECRET
+        sync: false
+      - key: ALLOWED_ORIGINS
+        sync: false
+      - key: MAX_FILE_SIZE_MB
+        value: "15"
+  - type: web
+    name: ai-contract-analyzer-web
+    runtime: static
+    rootDir: frontend
+    buildCommand: printf 'window.APP_CONFIG = { API_BASE_URL: "%s" };' "$REACT_APP_API_URL" > config.js
+    staticPublishPath: .
+    envVars:
+      - key: REACT_APP_API_URL
+        sync: false
+    autoDeploy: true
+
+databases:
+  - name: ai-contract-analyzer-db
+    plan: free

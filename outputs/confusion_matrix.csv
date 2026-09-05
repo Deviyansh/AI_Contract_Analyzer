@@ -1,0 +1,18 @@
+,Assignment,Audit Rights,Auto-Renewal,Change of Control,Confidentiality,Dispute Resolution,Exclusivity,Force Majeure,Governing Law,Indemnification,Insurance,Intellectual Property,Liability,Non-Compete,Payment Terms,Termination,Warranty
+Assignment,91,0,0,5,0,1,0,0,0,0,0,1,1,1,0,0,0
+Audit Rights,0,98,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0
+Auto-Renewal,0,0,98,0,0,0,0,0,0,0,0,1,0,1,3,7,0
+Change of Control,11,0,1,81,0,0,0,0,0,0,0,1,0,0,3,3,0
+Confidentiality,0,0,0,0,9,0,0,0,0,0,0,1,0,1,0,1,0
+Dispute Resolution,0,0,0,0,0,102,0,0,3,0,0,2,1,1,0,0,1
+Exclusivity,0,0,0,0,0,1,76,0,0,0,0,10,0,9,4,0,0
+Force Majeure,0,0,0,0,0,0,0,7,0,0,0,0,1,0,0,0,0
+Governing Law,0,0,0,0,0,4,0,0,105,0,0,1,0,0,0,0,0
+Indemnification,0,0,0,1,0,0,0,0,0,5,0,0,4,1,0,1,0
+Insurance,0,0,0,0,0,0,0,0,0,0,99,1,0,0,0,0,0
+Intellectual Property,4,0,0,0,0,1,13,0,0,0,0,89,0,0,1,1,1
+Liability,0,0,0,0,0,1,0,0,0,1,0,0,104,0,3,2,1
+Non-Compete,0,0,1,1,0,0,14,0,0,0,0,0,0,89,2,1,0
+Payment Terms,0,2,2,0,0,0,3,0,0,0,0,2,0,0,98,2,3
+Termination,0,4,2,2,1,0,1,0,0,0,1,0,0,5,4,94,0
+Warranty,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,83

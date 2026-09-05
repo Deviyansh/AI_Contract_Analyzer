@@ -1,0 +1,23 @@
+                       precision    recall  f1-score   support
+
+           Assignment       0.86      0.91      0.88       100
+         Audit Rights       0.94      0.98      0.96       100
+         Auto-Renewal       0.94      0.89      0.92       110
+    Change of Control       0.90      0.81      0.85       100
+      Confidentiality       0.90      0.75      0.82        12
+   Dispute Resolution       0.93      0.93      0.93       110
+          Exclusivity       0.71      0.76      0.73       100
+        Force Majeure       1.00      0.88      0.93         8
+        Governing Law       0.97      0.95      0.96       110
+      Indemnification       0.83      0.42      0.56        12
+            Insurance       0.98      0.99      0.99       100
+Intellectual Property       0.82      0.81      0.81       110
+            Liability       0.94      0.93      0.93       112
+          Non-Compete       0.82      0.82      0.82       108
+        Payment Terms       0.82      0.88      0.84       112
+          Termination       0.83      0.82      0.83       114
+             Warranty       0.93      0.98      0.95        85
+
+             accuracy                           0.88      1503
+            macro avg       0.89      0.85      0.87      1503
+         weighted avg       0.88      0.88      0.88      1503

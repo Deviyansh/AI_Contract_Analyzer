@@ -1,0 +1,13 @@
+                 precision    recall  f1-score   support
+
+     Assignment       1.00      0.97      0.98       100
+Confidentiality       1.00      1.00      1.00        72
+  Governing Law       1.00      1.00      1.00        66
+Indemnification       0.97      0.96      0.97        73
+      Insurance       1.00      0.97      0.98        94
+  Payment Terms       0.98      0.99      0.99       100
+    Termination       0.98      1.00      0.99       100
+
+      micro avg       0.99      0.98      0.99       605
+      macro avg       0.99      0.98      0.99       605
+   weighted avg       0.99      0.98      0.99       605

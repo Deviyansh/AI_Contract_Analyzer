@@ -1,0 +1,16 @@
+{
+  "dataset": "supplemental legal_docs external holdout",
+  "examples": 605,
+  "accuracy": 0.9834710743801653,
+  "macro_f1": 0.987035176504831,
+  "weighted_f1": 0.9866990997246902,
+  "labels": [
+    "Assignment",
+    "Confidentiality",
+    "Governing Law",
+    "Indemnification",
+    "Insurance",
+    "Payment Terms",
+    "Termination"
+  ]
+}

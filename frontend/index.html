@@ -1,0 +1,410 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>ContractAI — AI-Assisted Contract Intelligence</title>
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+
+  <!-- Toast notification -->
+  <div id="toast" class="toast hidden"></div>
+
+
+  <!-- =========================================================
+       TOP BAR
+       No background image
+       ========================================================= -->
+
+  <header class="topbar">
+    <a class="brand" href="#">ContractAI</a>
+
+    <div id="userArea"></div>
+  </header>
+
+
+  <!-- =========================================================
+       PAGE STAGE
+       
+       The background image exists ONLY inside this section.
+       Therefore the topbar and footer remain image-free.
+       ========================================================= -->
+
+  <div id="pageStage" class="page-stage login-stage">
+
+    <main>
+
+      <!-- =======================================================
+           AUTH / LOGIN VIEW
+           ======================================================= -->
+
+      <section id="authView" class="auth-shell">
+
+        <!-- Left hero card -->
+        <div class="hero-card">
+
+          <div class="eyebrow">
+            AI-ASSISTED CONTRACT INTELLIGENCE
+          </div>
+
+          <h1>
+            Analyze contracts with evidence-first AI assistance.
+          </h1>
+
+          <p>
+            Classify contract clauses, surface potential risk indicators,
+            and keep your analysis history in one secure workspace.
+          </p>
+
+          <div class="trust-row">
+            <span>17 clause categories</span>
+            <span>PDF · DOCX · TXT</span>
+            <span>Human review workflow</span>
+          </div>
+
+        </div>
+
+
+        <!-- Right authentication card -->
+        <div class="auth-card">
+
+          <div class="tabs">
+            <button
+              class="tab active"
+              data-auth="login"
+              type="button"
+            >
+              Sign in
+            </button>
+
+            <button
+              class="tab"
+              data-auth="signup"
+              type="button"
+            >
+              Create account
+            </button>
+          </div>
+
+
+          <form id="authForm">
+
+            <label>
+              Email
+
+              <input
+                id="email"
+                type="email"
+                required
+                autocomplete="email"
+              />
+            </label>
+
+
+            <label>
+              Password
+
+              <input
+                id="password"
+                type="password"
+                minlength="8"
+                required
+                autocomplete="current-password"
+              />
+            </label>
+
+
+            <button
+              class="primary"
+              type="submit"
+              id="authSubmit"
+            >
+              Sign in
+            </button>
+
+          </form>
+
+
+          <p class="muted small">
+            ContractAI is decision-support software, not legal advice.
+          </p>
+
+        </div>
+
+      </section>
+
+
+      <!-- =======================================================
+           DASHBOARD VIEW
+           ======================================================= -->
+
+      <section id="appView" class="hidden">
+
+        <div class="page-head">
+
+          <div>
+
+            <div class="eyebrow">
+              WORKSPACE
+            </div>
+
+            <h2>
+              Contract dashboard
+            </h2>
+
+            <p class="muted">
+              Upload a contract, run an analysis, and revisit previous results.
+            </p>
+
+          </div>
+
+
+          <button
+            id="refreshBtn"
+            class="secondary"
+            type="button"
+          >
+            Refresh
+          </button>
+
+        </div>
+
+
+        <!-- Dashboard statistics -->
+        <div
+          class="stats"
+          id="stats"
+        ></div>
+
+
+        <!-- Upload + contracts -->
+        <div class="grid-main">
+
+          <!-- Upload panel -->
+          <section class="panel upload-panel">
+
+            <h3>
+              Upload contract
+            </h3>
+
+            <p class="muted">
+              PDF, DOCX, or TXT · maximum 15 MB
+            </p>
+
+
+            <label
+              class="dropzone"
+              id="dropzone"
+            >
+
+              <input
+                id="fileInput"
+                type="file"
+                accept=".pdf,.docx,.txt"
+              />
+
+              <strong>
+                Choose a contract
+              </strong>
+
+              <span>
+                or drag and drop it here
+              </span>
+
+            </label>
+
+
+            <div
+              id="selectedFile"
+              class="file-pill hidden"
+            ></div>
+
+
+            <button
+              id="uploadBtn"
+              class="primary"
+              type="button"
+              disabled
+            >
+              Store contract
+            </button>
+
+          </section>
+
+
+          <!-- Contract list -->
+          <section class="panel">
+
+            <div class="section-head">
+
+              <h3>
+                My contracts
+              </h3>
+
+              <span
+                id="contractCount"
+                class="badge"
+              >
+                0
+              </span>
+
+            </div>
+
+
+            <div
+              id="contracts"
+              class="contract-list"
+            ></div>
+
+          </section>
+
+        </div>
+
+      </section>
+
+
+      <!-- =======================================================
+           CONTRACT DETAIL VIEW
+           ======================================================= -->
+
+      <section id="detailView" class="hidden">
+
+        <div class="page-head">
+
+          <div>
+
+            <button
+              id="backBtn"
+              class="link-button"
+              type="button"
+            >
+              ← Back to contracts
+            </button>
+
+            <h2 id="detailTitle">
+              Contract
+            </h2>
+
+            <p
+              id="detailMeta"
+              class="muted"
+            ></p>
+
+          </div>
+
+
+          <div class="actions">
+
+            <button
+              id="openFileBtn"
+              class="secondary"
+              type="button"
+            >
+              View original
+            </button>
+
+            <button
+              id="analyzeBtn"
+              class="primary"
+              type="button"
+            >
+              Analyze contract
+            </button>
+
+            <button
+              id="deleteBtn"
+              class="danger"
+              type="button"
+            >
+              Delete
+            </button>
+
+          </div>
+
+        </div>
+
+
+        <!-- No analysis state -->
+        <div
+          id="analysisEmpty"
+          class="panel empty-state"
+        >
+
+          <h3>
+            No analysis yet
+          </h3>
+
+          <p>
+            Run the analysis to classify clauses and identify configured
+            potential risk indicators.
+          </p>
+
+        </div>
+
+
+        <!-- Analysis -->
+        <div
+          id="analysisView"
+          class="hidden"
+        >
+
+          <div
+            class="stats"
+            id="analysisStats"
+          ></div>
+
+
+          <section class="panel">
+
+            <div class="section-head">
+
+              <h3>
+                Clause analysis
+              </h3>
+
+              <span class="muted small">
+                Model probability is not legal certainty.
+              </span>
+
+            </div>
+
+
+            <div
+              id="clauses"
+              class="clauses"
+            ></div>
+
+          </section>
+
+        </div>
+
+      </section>
+
+    </main>
+
+  </div>
+
+
+  <!-- =========================================================
+       FOOTER
+       No background image
+       ========================================================= -->
+
+  <footer>
+    <div>ContractAI · AI-assisted research and decision support ·
+    Human review required for consequential contract decisions.
+    </div>
+    <div>@Noctis</div> 
+  </footer>
+
+
+  <!-- Scripts -->
+  <script src="config.js"></script>
+  <script src="app.js"></script>
+
+</body>
+</html>

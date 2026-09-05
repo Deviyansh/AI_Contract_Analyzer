@@ -1,0 +1,14 @@
+.venv/
+__pycache__/
+*.py[cod]
+.env
+.DS_Store
+node_modules/
+frontend/.DS_Store
+*.log
+# Do not commit raw proprietary contracts. Keep CUAD/AOK downloads local unless their redistribution terms are verified.
+data/external/cuad/full_contract_pdf/
+data/external/cuad/full_contract_txt/
+data/external/cuad/label_group_xlsx/
+data/external/cuad/master_clauses.csv
+data/external/cuad/CUAD_v1.json
